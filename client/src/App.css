@@ -1,0 +1,159 @@
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise-in { animation: rise-in 420ms ease-out both; }
+.rise-in-delay { animation-delay: 100ms; }
+.soft-grid {
+  background-image: radial-gradient(#bbcabc 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.dashboard-page {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 73px);
+}
+
+.dashboard-page::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 300px;
+  background-image: radial-gradient(rgba(91, 126, 88, 0.11) 0.65px, transparent 0.65px), linear-gradient(180deg, #f0f4eb 0%, #f7f8f3 100%);
+  background-size: 22px 22px, auto;
+  content: '';
+  pointer-events: none;
+}
+
+.dashboard-heading {
+  position: relative;
+  padding-left: 17px;
+}
+
+.dashboard-heading::before {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #83ad73, #2f6c47);
+  content: '';
+}
+
+@keyframes card-arrive {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.donor-overview > section:first-child {
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(34, 65, 43, 0.055);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+.donor-overview > section:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(34, 65, 43, 0.1);
+}
+
+.donor-overview > section:first-child > div:first-child {
+  min-height: 132px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 22px 24px;
+  background-image: linear-gradient(90deg, rgba(24, 66, 43, 0.97) 0%, rgba(24, 66, 43, 0.83) 48%, rgba(24, 66, 43, 0.2) 100%), url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=80');
+  background-position: center 44%;
+  background-size: cover;
+}
+
+.donor-overview > section:first-child h2 { color: #fff; }
+.donor-overview > section:first-child > div:first-child p { color: rgba(255, 255, 255, 0.78); }
+.donor-overview > section:first-child > div:first-child > span { background: rgba(255, 255, 255, 0.16); color: #fff; }
+.donor-overview > section:first-child form { padding: 22px 24px 24px; }
+.donor-overview > section:first-child form input,
+.donor-overview > section:first-child form select,
+.donor-overview > section:first-child form textarea { transition: border-color 160ms ease, box-shadow 160ms ease; }
+
+.dashboard-stagger > div > article {
+  animation: card-arrive 480ms ease-out both;
+  border-color: #e0e7dc;
+  box-shadow: 0 5px 16px rgba(34, 65, 43, 0.035);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.dashboard-stagger > div > article:nth-child(1) { animation-delay: 70ms; }
+.dashboard-stagger > div > article:nth-child(2) { animation-delay: 140ms; }
+.dashboard-stagger > div > article:nth-child(3) { animation-delay: 210ms; }
+.dashboard-stagger > div > article:nth-child(4) { animation-delay: 280ms; }
+
+.donor-overview > div > article {
+  min-height: 96px;
+}
+
+.donor-overview > div > article:nth-child(1) {
+  border-top: 2px solid #78a87a;
+  background: linear-gradient(115deg, #edf6ec, #fff 72%);
+}
+
+.donor-overview > div > article:nth-child(2) {
+  border-top: 2px solid #d5a45b;
+  background: linear-gradient(115deg, #fff5e5, #fff 72%);
+}
+
+.donor-overview > div > article:nth-child(3) {
+  border-top: 2px solid #6d9ba0;
+  background: linear-gradient(115deg, #eaf3f3, #fff 72%);
+}
+
+.donor-overview > div > article:nth-child(1) > span { background: #dcebd9; color: #42774b; }
+.donor-overview > div > article:nth-child(2) > span { background: #f7ebd5; color: #936923; }
+.donor-overview > div > article:nth-child(3) > span { background: #dcebed; color: #39727a; }
+.dashboard-stagger > div > div:last-child { animation: card-arrive 480ms 300ms ease-out both; }
+
+.dashboard-stagger > div > article:hover {
+  transform: translateY(-2px);
+  border-color: #c6d8c5;
+  box-shadow: 0 10px 24px rgba(34, 65, 43, 0.075);
+}
+
+.donor-overview.is-pending form > button[type='submit'] {
+  filter: saturate(0.65);
+  opacity: 0.62;
+}
+
+@media (max-width: 640px) {
+  .donor-overview > section:first-child > div:first-child { padding: 20px; }
+  .donor-overview > section:first-child form { padding: 18px 20px 20px; }
+}
+
+.donor-overview > div > div:last-child {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  border-color: rgba(39, 75, 48, 0.18);
+  background-image: linear-gradient(180deg, rgba(20, 48, 32, 0.04) 0%, rgba(20, 48, 32, 0.88) 100%), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=85');
+  background-position: center 53%;
+  background-size: cover;
+  color: #fff;
+  box-shadow: 0 9px 24px rgba(34, 65, 43, 0.11);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.donor-overview > div > div:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(34, 65, 43, 0.16);
+}
+
+.donor-overview > div > div:last-child > p:first-child {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.donor-overview > div > div:last-child > p:last-child {
+  max-width: 280px;
+  color: #fff;
+  font-size: 14px;
+}
